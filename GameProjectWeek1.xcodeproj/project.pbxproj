@@ -15,6 +15,10 @@
 		16A1A8261B72ED3C006EE12A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8251B72ED3C006EE12A /* Images.xcassets */; };
 		16A1A8291B72ED3C006EE12A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8271B72ED3C006EE12A /* LaunchScreen.xib */; };
 		16A1A8351B72ED3C006EE12A /* GameProjectWeek1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1A8341B72ED3C006EE12A /* GameProjectWeek1Tests.swift */; };
+		16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A83E1B72ED8B006EE12A /* blueTank1.png */; };
+		16A1A8411B72ED93006EE12A /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8401B72ED93006EE12A /* bullet.png */; };
+		16A1A8431B72F1E9006EE12A /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8421B72F1E9006EE12A /* enemy.png */; };
+		16A1A8451B72F614006EE12A /* metalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8441B72F614006EE12A /* metalBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		16A1A82E1B72ED3C006EE12A /* GameProjectWeek1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameProjectWeek1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A1A8331B72ED3C006EE12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16A1A8341B72ED3C006EE12A /* GameProjectWeek1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProjectWeek1Tests.swift; sourceTree = "<group>"; };
+		16A1A83E1B72ED8B006EE12A /* blueTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueTank1.png; sourceTree = "<group>"; };
+		16A1A8401B72ED93006EE12A /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
+		16A1A8421B72F1E9006EE12A /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
+		16A1A8441B72F614006EE12A /* metalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,10 @@
 		16A1A8181B72ED3B006EE12A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16A1A83E1B72ED8B006EE12A /* blueTank1.png */,
+				16A1A8401B72ED93006EE12A /* bullet.png */,
+				16A1A8441B72F614006EE12A /* metalBackground.png */,
+				16A1A8421B72F1E9006EE12A /* enemy.png */,
 				16A1A8191B72ED3B006EE12A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -199,6 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A1A8291B72ED3C006EE12A /* LaunchScreen.xib in Resources */,
+				16A1A8451B72F614006EE12A /* metalBackground.png in Resources */,
+				16A1A8411B72ED93006EE12A /* bullet.png in Resources */,
+				16A1A8431B72F1E9006EE12A /* enemy.png in Resources */,
+				16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */,
 				16A1A8261B72ED3C006EE12A /* Images.xcassets in Resources */,
 				16A1A81D1B72ED3B006EE12A /* GameScene.sks in Resources */,
 				16A1A8241B72ED3C006EE12A /* Main.storyboard in Resources */,
