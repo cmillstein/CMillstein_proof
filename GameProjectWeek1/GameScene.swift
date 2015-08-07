@@ -84,10 +84,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         else if ((bodyOne.name == "blueTank") && (bodyTwo.name == "enemy")){
             
             collisionWithTank(bodyOne, blueTank: bodyTwo)
+            //bodyTwo.runAction(SKAction.playSoundFileNamed("Explosion2.m4a", waitForCompletion: false))
         }
         
             
-            
+        
             
             
         
@@ -99,6 +100,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     func bulletCollision(enemy: SKSpriteNode, bullet: SKSpriteNode){
         bullet.removeFromParent()
         enemy.removeFromParent()
+        
     }
     
     //Collision With Tank
@@ -106,7 +108,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         enemy.removeFromParent()
         blueTank.removeFromParent()
         
-        self.view?.presentScene(GameOverScene())
+        let gameOverSceneShow = SKTransition.flipHorizontalWithDuration(0.5)
+        let showScene = GameOverScene(size: self.size)
+        self.view?.presentScene(showScene, transition: gameOverSceneShow)
+        
     }
     
     
@@ -183,6 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         enemy.physicsBody?.collisionBitMask = WorkingPhysics.bullet
         enemy.physicsBody?.affectedByGravity = false
         enemy.name = "enemy"
+        //enemy.runAction(SKAction.playSoundFileNamed("backgroundMusic.mp3", waitForCompletion: false))
 
         self.addChild(enemy)
 

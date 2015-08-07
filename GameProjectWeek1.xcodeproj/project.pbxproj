@@ -60,6 +60,7 @@
 		16A1A8401B72ED93006EE12A /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		16A1A8421B72F1E9006EE12A /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
 		16EC67511B73FAF400121F32 /* desert2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert2.png; sourceTree = "<group>"; };
+		16FB296D1B750EB90045CC9F /* Explosion2.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explosion2.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 		16A1A8181B72ED3B006EE12A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16FB296D1B750EB90045CC9F /* Explosion2.m4a */,
 				166830381B745B0700BD0F81 /* backgroundMusic.mp3 */,
 				166830361B7459C000BD0F81 /* enemyHit.mp3 */,
 				166830341B7458A600BD0F81 /* tankShoot.mp3 */,

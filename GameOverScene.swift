@@ -38,7 +38,10 @@ class GameOverScene : SKScene {
     
     func ReplayGame(){
         //NSLog("Hello")
-        self.view?.presentScene(GameScene(), transition: SKTransition.flipHorizontalWithDuration(0.3))
+        let transitionScene : SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
+        let sceneSwitch = GameScene(size: self.view!.bounds.size)
+        sceneSwitch.scaleMode = .AspectFill
+        self.view?.presentScene(sceneSwitch, transition: transitionScene)
         replay.removeFromSuperview()
         
 }
