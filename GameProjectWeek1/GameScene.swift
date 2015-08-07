@@ -8,18 +8,37 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+
+
+
+
+struct WorkingPhysics {
+    static let enemy : UInt32 = 0x1 << 0
+    static let bullet : UInt32 = 0x1 << 1
+    static let bluePlayer : UInt32 = 0x1 >> 2
+}
+
+
+class GameScene: SKScene, SKPhysicsContactDelegate{
     
     var blueTank = SKSpriteNode(imageNamed: "blueTank1.png")
     var Timer = NSTimer()
-    var backgroundImage = SKSpriteNode(imageNamed: "metalBackground.png")
+    var backgroundImage = SKSpriteNode(imageNamed: "metal.png")
     
     
     override func didMoveToView(view: SKView) {
+        
+        self.physicsWorld.contactDelegate = self
        
     blueTank.size = CGSize(width: 100, height: 100)
-    blueTank.position = CGPoint(x: frame.width/2, y: frame.height/2)
+    blueTank.position = CGPoint(x: frame.width/2, y: frame.height/5)
     blueTank.zPosition = 1.0
+        
+        blueTank.physicsBody = SKPhysicsBody(rectangleOfSize: blueTank.size)
+        blueTank.physicsBody?.categoryBitMask = WorkingPhysics.bluePlayer
+        blueTank.physicsBody?.affectedByGravity = false
+        blueTank.physicsBody?.contactTestBitMask = WorkingPhysics.enemy
+        blueTank.physicsBody?.dynamic = false
         
     self.addChild(blueTank)
     
@@ -35,6 +54,51 @@ class GameScene: SKScene {
     
     }
     
+
+    
+    
+    func didBeginContact(contact: SKPhysicsContact) {
+        let bodyOne = contact.bodyA.node as! SKSpriteNode
+        let bodyTwo = contact.bodyB.node as! SKSpriteNode
+        
+        
+        
+        if ((bodyOne.name == "enemy") && (bodyTwo.name == "bullet")){
+            
+            bulletCollision(bodyOne, bullet: bodyTwo)
+            
+        }
+        else if ((bodyOne.name == "bullet") && (bodyTwo.name == "enemy")){
+            
+            
+            bulletCollision(bodyTwo, bullet: bodyOne)
+        }
+            
+        
+            
+            
+            
+            
+        
+        
+        
+        
+    }
+    
+    func bulletCollision(enemy: SKSpriteNode, bullet: SKSpriteNode){
+        bullet.removeFromParent()
+        enemy.removeFromParent()
+    }
+    
+    func collisionWithTank(enemy: SKSpriteNode, blueTank: SKSpriteNode){
+        enemy.removeFromParent()
+        blueTank.removeFromParent()
+        
+        self.view?.presentScene(GameOverScene())
+    }
+    
+    
+    
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
@@ -45,10 +109,10 @@ class GameScene: SKScene {
             bullet.position = blueTank.position
             bullet.size = CGSize(width: 25, height: 25)
             bullet.physicsBody = SKPhysicsBody(circleOfRadius: bullet.size.width/2)
-            bullet.physicsBody?.affectedByGravity = false
             
             
-            self.addChild(bullet)
+            
+            
         
         
         
@@ -56,65 +120,64 @@ class GameScene: SKScene {
             var yCoord = CGFloat(location.y - blueTank.position.y)
             
             
+            bullet.physicsBody?.categoryBitMask = WorkingPhysics.bullet
+            bullet.physicsBody?.collisionBitMask = WorkingPhysics.enemy
+            bullet.physicsBody?.contactTestBitMask = WorkingPhysics.enemy
+            bullet.name = "bullet"
+            bullet.physicsBody?.dynamic = true
+            bullet.physicsBody?.affectedByGravity = false
+            
             
             let magnitude = sqrt(xCoord * xCoord + yCoord * yCoord)
             xCoord /= magnitude
             yCoord /= magnitude
+            
+            self.addChild(bullet)
             
             let vector = CGVector(dx: 13.0 * xCoord, dy: 13.0 * yCoord)
             
             bullet.physicsBody?.applyImpulse(vector)
             
             
+            
         
         }
     }
     
+    
+    //CREATE ENEMIES
+    
     func MakeEnemiesAppear(){
         
-        let enemy = SKSpriteNode(imageNamed: "enemy.png")
+        
+        var enemy = SKSpriteNode(imageNamed: "enemy.png")
+        var minimum = self.size.width / 8
+        var maximum = self.size.width - 20
+        var spawn = UInt32(maximum - minimum)
+        enemy.position = CGPointMake(CGFloat(arc4random_uniform(spawn)), self.size.height)
+        
+        let action = SKAction.moveToY(-50, duration: 2.5)
+        let actionStop = SKAction.removeFromParent()
+        enemy.runAction(SKAction.sequence([action, actionStop]))
+        enemy.runAction(SKAction.repeatActionForever(action))
         
         
-        let random = arc4random() % 4
-        switch random {
-        case 0:
-            enemy.position.x = 0
-            var yPosition = arc4random_uniform(UInt32(frame.size.height))
-            enemy.position.y = CGFloat(yPosition)
-            
-            self.addChild(enemy)
-            break
-        case 1:
-            enemy.position.y = 0
-            var xPosition = arc4random_uniform(UInt32(frame.size.width))
-            enemy.position.x = CGFloat(xPosition)
-            
-            self.addChild(enemy)
-            
-            break
-        case 2:
-            enemy.position.y = frame.size.height
-            var xPosition = arc4random_uniform(UInt32(frame.size.width))
-            enemy.position.y = CGFloat(xPosition)
-            
-            self.addChild(enemy)
-            
-            break
-        case 3:
-            enemy.position.x = frame.size.width
-            var yPosition = arc4random_uniform(UInt32(frame.size.height))
-            enemy.position.y = CGFloat(yPosition)
-            
-            self.addChild(enemy)
-            
-            break
-        default:
-            break
-        }
         
-        enemy.runAction(SKAction.moveTo(blueTank.position, duration: 5.0))
+        
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size)
+        enemy.physicsBody?.categoryBitMask = WorkingPhysics.enemy
+        enemy.physicsBody?.contactTestBitMask = WorkingPhysics.bullet
+        enemy.physicsBody?.collisionBitMask = WorkingPhysics.bullet
+        enemy.physicsBody?.affectedByGravity = false
+        enemy.name = "enemy"
+
+        self.addChild(enemy)
+
+        
+        
         
     }
+    
     
     
     

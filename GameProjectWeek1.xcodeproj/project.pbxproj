@@ -18,7 +18,9 @@
 		16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A83E1B72ED8B006EE12A /* blueTank1.png */; };
 		16A1A8411B72ED93006EE12A /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8401B72ED93006EE12A /* bullet.png */; };
 		16A1A8431B72F1E9006EE12A /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8421B72F1E9006EE12A /* enemy.png */; };
-		16A1A8451B72F614006EE12A /* metalBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8441B72F614006EE12A /* metalBackground.png */; };
+		16EC674E1B73F0C600121F32 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC674D1B73F0C600121F32 /* GameOverScene.swift */; };
+		16EC67521B73FAF400121F32 /* desert2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EC67511B73FAF400121F32 /* desert2.png */; };
+		16EC67541B73FB4400121F32 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EC67531B73FB4400121F32 /* metal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,9 @@
 		16A1A83E1B72ED8B006EE12A /* blueTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueTank1.png; sourceTree = "<group>"; };
 		16A1A8401B72ED93006EE12A /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		16A1A8421B72F1E9006EE12A /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
-		16A1A8441B72F614006EE12A /* metalBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metalBackground.png; sourceTree = "<group>"; };
+		16EC674D1B73F0C600121F32 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		16EC67511B73FAF400121F32 /* desert2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert2.png; sourceTree = "<group>"; };
+		16EC67531B73FB4400121F32 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				16A1A81A1B72ED3B006EE12A /* AppDelegate.swift */,
 				16A1A81C1B72ED3B006EE12A /* GameScene.sks */,
 				16A1A81E1B72ED3C006EE12A /* GameScene.swift */,
+				16EC674D1B73F0C600121F32 /* GameOverScene.swift */,
 				16A1A8201B72ED3C006EE12A /* GameViewController.swift */,
 				16A1A8221B72ED3C006EE12A /* Main.storyboard */,
 				16A1A8251B72ED3C006EE12A /* Images.xcassets */,
@@ -104,9 +109,10 @@
 		16A1A8181B72ED3B006EE12A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16EC67531B73FB4400121F32 /* metal.png */,
+				16EC67511B73FAF400121F32 /* desert2.png */,
 				16A1A83E1B72ED8B006EE12A /* blueTank1.png */,
 				16A1A8401B72ED93006EE12A /* bullet.png */,
-				16A1A8441B72F614006EE12A /* metalBackground.png */,
 				16A1A8421B72F1E9006EE12A /* enemy.png */,
 				16A1A8191B72ED3B006EE12A /* Info.plist */,
 			);
@@ -210,8 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16EC67541B73FB4400121F32 /* metal.png in Resources */,
 				16A1A8291B72ED3C006EE12A /* LaunchScreen.xib in Resources */,
-				16A1A8451B72F614006EE12A /* metalBackground.png in Resources */,
+				16EC67521B73FAF400121F32 /* desert2.png in Resources */,
 				16A1A8411B72ED93006EE12A /* bullet.png in Resources */,
 				16A1A8431B72F1E9006EE12A /* enemy.png in Resources */,
 				16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */,
@@ -237,6 +244,7 @@
 			files = (
 				16A1A81F1B72ED3C006EE12A /* GameScene.swift in Sources */,
 				16A1A8211B72ED3C006EE12A /* GameViewController.swift in Sources */,
+				16EC674E1B73F0C600121F32 /* GameOverScene.swift in Sources */,
 				16A1A81B1B72ED3B006EE12A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +441,7 @@
 				16A1A83A1B72ED3C006EE12A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16A1A83B1B72ED3C006EE12A /* Build configuration list for PBXNativeTarget "GameProjectWeek1Tests" */ = {
 			isa = XCConfigurationList;
@@ -441,6 +450,7 @@
 				16A1A83D1B72ED3C006EE12A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
