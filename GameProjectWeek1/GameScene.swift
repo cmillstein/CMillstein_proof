@@ -33,6 +33,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     blueTank.size = CGSize(width: 100, height: 100)
     blueTank.position = CGPoint(x: frame.width/2, y: frame.height/5)
     blueTank.zPosition = 1.0
+        blueTank.name = "blueTank"
         
         blueTank.physicsBody = SKPhysicsBody(rectangleOfSize: blueTank.size)
         blueTank.physicsBody?.categoryBitMask = WorkingPhysics.bluePlayer
@@ -68,12 +69,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             bulletCollision(bodyOne, bullet: bodyTwo)
             
         }
-        else if ((bodyOne.name == "bullet") && (bodyTwo.name == "enemy")){
+        if ((bodyOne.name == "bullet") && (bodyTwo.name == "enemy")){
             
             
             bulletCollision(bodyTwo, bullet: bodyOne)
-        }
             
+        }
+        
+        else if ((bodyOne.name == "blueTank") && (bodyTwo.name == "enemy")){
+            
+            collisionWithTank(bodyOne, blueTank: bodyTwo)
+        }
         
             
             
