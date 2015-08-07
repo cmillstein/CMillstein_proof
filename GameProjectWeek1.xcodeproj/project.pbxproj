@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		166830311B74527500BD0F81 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166830301B74527500BD0F81 /* GameOverScene.swift */; };
+		166830351B7458A600BD0F81 /* tankShoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830341B7458A600BD0F81 /* tankShoot.mp3 */; };
+		166830371B7459C000BD0F81 /* enemyHit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830361B7459C000BD0F81 /* enemyHit.mp3 */; };
+		166830391B745B0700BD0F81 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830381B745B0700BD0F81 /* backgroundMusic.mp3 */; };
+		1693C5471B74511A00AC9B69 /* Metalbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1693C5461B74511A00AC9B69 /* Metalbackground.png */; };
+		1693C5491B7451FD00AC9B69 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1693C5481B7451FD00AC9B69 /* GameScene.sks */; };
+		169FDB531B74482900E4BE07 /* redTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 169FDB521B74482900E4BE07 /* redTank1.png */; };
 		16A1A81B1B72ED3B006EE12A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1A81A1B72ED3B006EE12A /* AppDelegate.swift */; };
-		16A1A81D1B72ED3B006EE12A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A81C1B72ED3B006EE12A /* GameScene.sks */; };
 		16A1A81F1B72ED3C006EE12A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1A81E1B72ED3C006EE12A /* GameScene.swift */; };
 		16A1A8211B72ED3C006EE12A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A1A8201B72ED3C006EE12A /* GameViewController.swift */; };
 		16A1A8241B72ED3C006EE12A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8221B72ED3C006EE12A /* Main.storyboard */; };
@@ -18,9 +24,7 @@
 		16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A83E1B72ED8B006EE12A /* blueTank1.png */; };
 		16A1A8411B72ED93006EE12A /* bullet.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8401B72ED93006EE12A /* bullet.png */; };
 		16A1A8431B72F1E9006EE12A /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A1A8421B72F1E9006EE12A /* enemy.png */; };
-		16EC674E1B73F0C600121F32 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC674D1B73F0C600121F32 /* GameOverScene.swift */; };
 		16EC67521B73FAF400121F32 /* desert2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EC67511B73FAF400121F32 /* desert2.png */; };
-		16EC67541B73FB4400121F32 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = 16EC67531B73FB4400121F32 /* metal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +38,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		166830301B74527500BD0F81 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
+		166830341B7458A600BD0F81 /* tankShoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tankShoot.mp3; sourceTree = "<group>"; };
+		166830361B7459C000BD0F81 /* enemyHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemyHit.mp3; sourceTree = "<group>"; };
+		166830381B745B0700BD0F81 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		1693C5461B74511A00AC9B69 /* Metalbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Metalbackground.png; sourceTree = "<group>"; };
+		1693C5481B7451FD00AC9B69 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		169FDB521B74482900E4BE07 /* redTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redTank1.png; sourceTree = "<group>"; };
 		16A1A8151B72ED3B006EE12A /* GameProjectWeek1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameProjectWeek1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16A1A8191B72ED3B006EE12A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16A1A81A1B72ED3B006EE12A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		16A1A81C1B72ED3B006EE12A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		16A1A81E1B72ED3C006EE12A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		16A1A8201B72ED3C006EE12A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		16A1A8231B72ED3C006EE12A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,9 +59,7 @@
 		16A1A83E1B72ED8B006EE12A /* blueTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueTank1.png; sourceTree = "<group>"; };
 		16A1A8401B72ED93006EE12A /* bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bullet.png; sourceTree = "<group>"; };
 		16A1A8421B72F1E9006EE12A /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy.png; sourceTree = "<group>"; };
-		16EC674D1B73F0C600121F32 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		16EC67511B73FAF400121F32 /* desert2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desert2.png; sourceTree = "<group>"; };
-		16EC67531B73FB4400121F32 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				16A1A81A1B72ED3B006EE12A /* AppDelegate.swift */,
-				16A1A81C1B72ED3B006EE12A /* GameScene.sks */,
+				1693C5481B7451FD00AC9B69 /* GameScene.sks */,
 				16A1A81E1B72ED3C006EE12A /* GameScene.swift */,
-				16EC674D1B73F0C600121F32 /* GameOverScene.swift */,
+				166830301B74527500BD0F81 /* GameOverScene.swift */,
 				16A1A8201B72ED3C006EE12A /* GameViewController.swift */,
 				16A1A8221B72ED3C006EE12A /* Main.storyboard */,
 				16A1A8251B72ED3C006EE12A /* Images.xcassets */,
@@ -109,10 +117,14 @@
 		16A1A8181B72ED3B006EE12A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				16EC67531B73FB4400121F32 /* metal.png */,
+				166830381B745B0700BD0F81 /* backgroundMusic.mp3 */,
+				166830361B7459C000BD0F81 /* enemyHit.mp3 */,
+				166830341B7458A600BD0F81 /* tankShoot.mp3 */,
+				169FDB521B74482900E4BE07 /* redTank1.png */,
 				16EC67511B73FAF400121F32 /* desert2.png */,
 				16A1A83E1B72ED8B006EE12A /* blueTank1.png */,
 				16A1A8401B72ED93006EE12A /* bullet.png */,
+				1693C5461B74511A00AC9B69 /* Metalbackground.png */,
 				16A1A8421B72F1E9006EE12A /* enemy.png */,
 				16A1A8191B72ED3B006EE12A /* Info.plist */,
 			);
@@ -216,15 +228,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16EC67541B73FB4400121F32 /* metal.png in Resources */,
 				16A1A8291B72ED3C006EE12A /* LaunchScreen.xib in Resources */,
 				16EC67521B73FAF400121F32 /* desert2.png in Resources */,
+				169FDB531B74482900E4BE07 /* redTank1.png in Resources */,
 				16A1A8411B72ED93006EE12A /* bullet.png in Resources */,
+				1693C5471B74511A00AC9B69 /* Metalbackground.png in Resources */,
 				16A1A8431B72F1E9006EE12A /* enemy.png in Resources */,
+				1693C5491B7451FD00AC9B69 /* GameScene.sks in Resources */,
+				166830391B745B0700BD0F81 /* backgroundMusic.mp3 in Resources */,
 				16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */,
 				16A1A8261B72ED3C006EE12A /* Images.xcassets in Resources */,
-				16A1A81D1B72ED3B006EE12A /* GameScene.sks in Resources */,
+				166830371B7459C000BD0F81 /* enemyHit.mp3 in Resources */,
 				16A1A8241B72ED3C006EE12A /* Main.storyboard in Resources */,
+				166830351B7458A600BD0F81 /* tankShoot.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +260,7 @@
 			files = (
 				16A1A81F1B72ED3C006EE12A /* GameScene.swift in Sources */,
 				16A1A8211B72ED3C006EE12A /* GameViewController.swift in Sources */,
-				16EC674E1B73F0C600121F32 /* GameOverScene.swift in Sources */,
+				166830311B74527500BD0F81 /* GameOverScene.swift in Sources */,
 				16A1A81B1B72ED3B006EE12A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

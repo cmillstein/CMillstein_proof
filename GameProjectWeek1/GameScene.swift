@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 
 
@@ -23,10 +24,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
     var blueTank = SKSpriteNode(imageNamed: "blueTank1.png")
     var Timer = NSTimer()
-    var backgroundImage = SKSpriteNode(imageNamed: "metal.png")
+    var backgroundImage = SKSpriteNode(imageNamed: "Metalbackground.png")
+    
     
     
     override func didMoveToView(view: SKView) {
+        
+    
         
         self.physicsWorld.contactDelegate = self
        
@@ -49,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         
     self.addChild(backgroundImage)
-        backgroundImage.position = CGPointMake(self.size.width/2, self.size.height/2)
+    backgroundImage.position = CGPointMake(self.size.width/2, self.size.height/2)
         
         
     
@@ -57,7 +61,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
 
     
-    
+    //Connecting the contact between enemies, bullets, and tank
     func didBeginContact(contact: SKPhysicsContact) {
         let bodyOne = contact.bodyA.node as! SKSpriteNode
         let bodyTwo = contact.bodyB.node as! SKSpriteNode
@@ -67,6 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         if ((bodyOne.name == "enemy") && (bodyTwo.name == "bullet")){
             
             bulletCollision(bodyOne, bullet: bodyTwo)
+        
             
         }
         if ((bodyOne.name == "bullet") && (bodyTwo.name == "enemy")){
@@ -90,12 +95,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         
     }
-    
+    //Bullet Collision
     func bulletCollision(enemy: SKSpriteNode, bullet: SKSpriteNode){
         bullet.removeFromParent()
         enemy.removeFromParent()
     }
     
+    //Collision With Tank
     func collisionWithTank(enemy: SKSpriteNode, blueTank: SKSpriteNode){
         enemy.removeFromParent()
         blueTank.removeFromParent()
@@ -132,6 +138,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             bullet.name = "bullet"
             bullet.physicsBody?.dynamic = true
             bullet.physicsBody?.affectedByGravity = false
+            bullet.runAction(SKAction.playSoundFileNamed("tankShoot.mp3", waitForCompletion: false))
             
             
             let magnitude = sqrt(xCoord * xCoord + yCoord * yCoord)
@@ -145,7 +152,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             bullet.physicsBody?.applyImpulse(vector)
             
             
-            
+           
         
         }
     }
