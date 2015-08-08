@@ -32,7 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
     override func didMoveToView(view: SKView) {
         
-        
+        //Setting up physics for world
         
         self.physicsWorld.contactDelegate = self
        
