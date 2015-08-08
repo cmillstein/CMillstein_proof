@@ -29,7 +29,6 @@ class GameOverScene : SKScene {
         replay.setTitle("Replay", forState: UIControlState.Normal)
         replay.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         
-        
         replay.addTarget(self, action: Selector("ReplayGame"), forControlEvents: UIControlEvents.TouchUpInside)
         
         self.view?.addSubview(replay)
@@ -37,7 +36,7 @@ class GameOverScene : SKScene {
     
     
     func ReplayGame(){
-        //NSLog("Hello")
+
         let transitionScene : SKTransition = SKTransition.flipHorizontalWithDuration(0.5)
         let sceneSwitch = GameScene(size: self.view!.bounds.size)
         sceneSwitch.scaleMode = .AspectFill

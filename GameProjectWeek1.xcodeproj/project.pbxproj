@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160DE6AD1B757F0B00B4E626 /* enemy2.png in Resources */ = {isa = PBXBuildFile; fileRef = 160DE6AC1B757F0B00B4E626 /* enemy2.png */; };
 		166830311B74527500BD0F81 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166830301B74527500BD0F81 /* GameOverScene.swift */; };
 		166830351B7458A600BD0F81 /* tankShoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830341B7458A600BD0F81 /* tankShoot.mp3 */; };
 		166830371B7459C000BD0F81 /* enemyHit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830361B7459C000BD0F81 /* enemyHit.mp3 */; };
 		166830391B745B0700BD0F81 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 166830381B745B0700BD0F81 /* backgroundMusic.mp3 */; };
+		1687B4C11B758D3C0054C3E9 /* enemyDrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1687B4C01B758D3C0054C3E9 /* enemyDrop.mp3 */; };
 		1693C5471B74511A00AC9B69 /* Metalbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1693C5461B74511A00AC9B69 /* Metalbackground.png */; };
 		1693C5491B7451FD00AC9B69 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1693C5481B7451FD00AC9B69 /* GameScene.sks */; };
 		169FDB531B74482900E4BE07 /* redTank1.png in Resources */ = {isa = PBXBuildFile; fileRef = 169FDB521B74482900E4BE07 /* redTank1.png */; };
@@ -38,10 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160DE6AC1B757F0B00B4E626 /* enemy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy2.png; sourceTree = "<group>"; };
 		166830301B74527500BD0F81 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverScene.swift; path = ../GameOverScene.swift; sourceTree = "<group>"; };
 		166830341B7458A600BD0F81 /* tankShoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tankShoot.mp3; sourceTree = "<group>"; };
 		166830361B7459C000BD0F81 /* enemyHit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemyHit.mp3; sourceTree = "<group>"; };
 		166830381B745B0700BD0F81 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		1687B4C01B758D3C0054C3E9 /* enemyDrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = enemyDrop.mp3; sourceTree = "<group>"; };
 		1693C5461B74511A00AC9B69 /* Metalbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Metalbackground.png; sourceTree = "<group>"; };
 		1693C5481B7451FD00AC9B69 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		169FDB521B74482900E4BE07 /* redTank1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redTank1.png; sourceTree = "<group>"; };
@@ -121,8 +125,10 @@
 				16FB296D1B750EB90045CC9F /* Explosion2.m4a */,
 				166830381B745B0700BD0F81 /* backgroundMusic.mp3 */,
 				166830361B7459C000BD0F81 /* enemyHit.mp3 */,
+				1687B4C01B758D3C0054C3E9 /* enemyDrop.mp3 */,
 				166830341B7458A600BD0F81 /* tankShoot.mp3 */,
 				169FDB521B74482900E4BE07 /* redTank1.png */,
+				160DE6AC1B757F0B00B4E626 /* enemy2.png */,
 				16EC67511B73FAF400121F32 /* desert2.png */,
 				16A1A83E1B72ED8B006EE12A /* blueTank1.png */,
 				16A1A8401B72ED93006EE12A /* bullet.png */,
@@ -233,11 +239,13 @@
 				16A1A8291B72ED3C006EE12A /* LaunchScreen.xib in Resources */,
 				16EC67521B73FAF400121F32 /* desert2.png in Resources */,
 				169FDB531B74482900E4BE07 /* redTank1.png in Resources */,
+				160DE6AD1B757F0B00B4E626 /* enemy2.png in Resources */,
 				16A1A8411B72ED93006EE12A /* bullet.png in Resources */,
 				1693C5471B74511A00AC9B69 /* Metalbackground.png in Resources */,
 				16A1A8431B72F1E9006EE12A /* enemy.png in Resources */,
 				1693C5491B7451FD00AC9B69 /* GameScene.sks in Resources */,
 				166830391B745B0700BD0F81 /* backgroundMusic.mp3 in Resources */,
+				1687B4C11B758D3C0054C3E9 /* enemyDrop.mp3 in Resources */,
 				16A1A83F1B72ED8B006EE12A /* blueTank1.png in Resources */,
 				16A1A8261B72ED3C006EE12A /* Images.xcassets in Resources */,
 				166830371B7459C000BD0F81 /* enemyHit.mp3 in Resources */,

@@ -12,11 +12,13 @@ import AVFoundation
 
 
 
+//Creating physics structures
 
 struct WorkingPhysics {
     static let enemy : UInt32 = 0x1 << 0
     static let bullet : UInt32 = 0x1 << 1
     static let bluePlayer : UInt32 = 0x1 >> 2
+    
 }
 
 
@@ -30,12 +32,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     
     override func didMoveToView(view: SKView) {
         
-    
+        
         
         self.physicsWorld.contactDelegate = self
        
     blueTank.size = CGSize(width: 100, height: 100)
     blueTank.position = CGPoint(x: frame.width/2, y: frame.height/5)
+        //zPosition showing tank
     blueTank.zPosition = 1.0
         blueTank.name = "blueTank"
         
@@ -71,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         if ((bodyOne.name == "enemy") && (bodyTwo.name == "bullet")){
             
             bulletCollision(bodyOne, bullet: bodyTwo)
-        
+
             
         }
         if ((bodyOne.name == "bullet") && (bodyTwo.name == "enemy")){
@@ -87,10 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             //bodyTwo.runAction(SKAction.playSoundFileNamed("Explosion2.m4a", waitForCompletion: false))
         }
         
-            
         
-            
-            
         
         
         
@@ -121,7 +121,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
-            
+            //creating bullet
            var bullet = SKSpriteNode(imageNamed: "bullet.png")
             bullet.position = blueTank.position
             bullet.size = CGSize(width: 25, height: 25)
@@ -136,7 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             var xCoord = CGFloat(location.x - blueTank.position.x)
             var yCoord = CGFloat(location.y - blueTank.position.y)
             
-            
+            //Creating bullet physics
             bullet.physicsBody?.categoryBitMask = WorkingPhysics.bullet
             bullet.physicsBody?.collisionBitMask = WorkingPhysics.enemy
             bullet.physicsBody?.contactTestBitMask = WorkingPhysics.enemy
@@ -149,12 +149,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             let magnitude = sqrt(xCoord * xCoord + yCoord * yCoord)
             xCoord /= magnitude
             yCoord /= magnitude
-            
+
             self.addChild(bullet)
             
             let vector = CGVector(dx: 13.0 * xCoord, dy: 13.0 * yCoord)
             
             bullet.physicsBody?.applyImpulse(vector)
+            
+            
+
             
             
            
@@ -169,6 +172,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         
         
         var enemy = SKSpriteNode(imageNamed: "enemy.png")
+        
         var minimum = self.size.width / 8
         var maximum = self.size.width - 20
         var spawn = UInt32(maximum - minimum)
@@ -188,7 +192,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         enemy.physicsBody?.collisionBitMask = WorkingPhysics.bullet
         enemy.physicsBody?.affectedByGravity = false
         enemy.name = "enemy"
-        //enemy.runAction(SKAction.playSoundFileNamed("backgroundMusic.mp3", waitForCompletion: false))
+        enemy.runAction(SKAction.playSoundFileNamed("enemyDrop.mp3", waitForCompletion: false))
 
         self.addChild(enemy)
 
