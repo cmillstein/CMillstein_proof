@@ -17,9 +17,10 @@ import AVFoundation
 struct WorkingPhysics {
     static let enemy : UInt32 = 0x1 << 0
     static let bullet : UInt32 = 0x1 << 1
-    static let bluePlayer : UInt32 = 0x1 >> 2
+    static let bluePlayer : UInt32 = 0x1 << 2
     
 }
+
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate{
@@ -28,6 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     var Timer = NSTimer()
     var backgroundImage = SKSpriteNode(imageNamed: "Metalbackground.png")
     
+
     
     
     override func didMoveToView(view: SKView) {
@@ -55,11 +57,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
     Timer = NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: Selector("MakeEnemiesAppear"), userInfo: nil, repeats: true)
         
         
-    self.addChild(backgroundImage)
-    backgroundImage.position = CGPointMake(self.size.width/2, self.size.height/2)
+    //self.addChild(backgroundImage)
+    //backgroundImage.position = CGPointMake(self.size.width/2, self.size.height/2)
         
+        var loopBackground = SKAction.moveToY(-backgroundImage.size.width, duration: 7)
+        var overlapBackground = SKAction.moveToY(backgroundImage.size.width, duration: 0)
+        var replace = SKAction.repeatActionForever(SKAction.sequence([loopBackground, overlapBackground]))
         
-    
+        for var i : CGFloat = 0; i<1; i++ {
+           // var repeatBackground = SKSpriteNode(texture: backgroundImage)
+            backgroundImage.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
+            backgroundImage.size.height = self.frame.height
+            backgroundImage.runAction(replace)
+            
+            self.addChild(backgroundImage)
+        
+        }
     }
     
 
@@ -156,7 +169,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
             
             bullet.physicsBody?.applyImpulse(vector)
             
-            
+            //blueTank.position.x = location.x
 
             
             
@@ -192,7 +205,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         enemy.physicsBody?.collisionBitMask = WorkingPhysics.bullet
         enemy.physicsBody?.affectedByGravity = false
         enemy.name = "enemy"
-        enemy.runAction(SKAction.playSoundFileNamed("enemyDrop.mp3", waitForCompletion: false))
+        //enemy.runAction(SKAction.playSoundFileNamed("enemyDrop.mp3", waitForCompletion: false))
 
         self.addChild(enemy)
 
